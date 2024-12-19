@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.cardSearch</groupId>
-	<artifactId>ga</artifactId>
+	<artifactId>cardSearch</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ga</name>
 	<description>Demo project for Spring Boot</description>

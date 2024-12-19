@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: cardSearch
+
+  datasource:
+    url: jdbc:postgresql://localhost:54321/card_seacch_db
+    username: root
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+# jwt:
+#   secret: WahahahaThisIsASecretASFFEFJIOEJGSDL;JS;DLGFJDFSL;DFJ;LSDJFSL;D
+#   expiration: 1800 # 設置 JWT 過期時間為 1800 秒 (30 分鐘)
+#   issuer: TodoTeam
+# logging:
+#   level:
+#     org.springframework:
+#         web: DEBUG
+#       hibernate:
+#         SQL: DEBUG
+
+# evm:
+#   workerId: 10
+#   datacenterId: 0
+
+# server:
+#   ssl:
+#     enabled: true
+#     key-store: classpath:keystore.p12
+#     key-store-password: 123456
+#     key-store-type: PKCS12
+#     key-alias: my-ssl-cert

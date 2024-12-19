@@ -1,0 +1,23 @@
+# 第一階段: 使用 Maven 來構建 Spring Boot 應用
+FROM maven:3.9-eclipse-temurin-21 AS build
+WORKDIR /app
+
+# 複製 Maven 設定檔和源代碼
+COPY pom.xml .
+COPY src ./src
+
+# 執行 Maven 構建命令，將 Spring Boot 應用打包成 JAR
+RUN mvn clean package -DskipTests
+
+# 第二階段: 使用 OpenJDK 21 來運行構建的 JAR 文件
+FROM eclipse-temurin:21.0.2_13-jdk-alpine
+WORKDIR /app
+
+# 複製從第一階段構建的 JAR 文件到此階段
+COPY --from=build /app/target/cardSearch-0.0.1-SNAPSHOT.jar /app/app.jar
+
+# 對外暴露 8080 端口
+EXPOSE 8080
+
+# 設置啟動命令來運行 Spring Boot 應用
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
