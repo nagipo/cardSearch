@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: postgres:16.6
+    image: postgres:17
     container_name: postgre-sql_cardSearch
     env_file:
       - ./env/postgres.env
